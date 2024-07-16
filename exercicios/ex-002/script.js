@@ -45,3 +45,9 @@ if (numeroSenha == senha) {
 else {
     console.log("acesso negado")
 }
+
+
+let idade2 = 10
+if ((idade2 >=17 && idade2 <=20) || idade2 ===10) {
+    console.log("parabens")
+}
