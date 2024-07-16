@@ -1,5 +1,5 @@
-let nome = "Pedro"
-let idade = 90
-
+var nome = "pedro"
 console.log(nome)
-console.log(idade)
+
+nome = "joao"
+console.log(nome)
