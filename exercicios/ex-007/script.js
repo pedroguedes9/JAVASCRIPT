@@ -1,16 +1,10 @@
-let colors = ["blue", "green", "red"]
-console.log(colors[2])
+let carros = ["BMW", "Ferrari", "Mercedes"]
+console.log(`1. ${carros[1]}`)
 
-let ages = [10, 20, 30]
-console.log(ages[1])
+carros[1] = "Audi"
+console.log(`2. ${carros}`)
 
-let list = ["aldjfo", "ffds", 2, colors[1]]
-console.log(list[3])
+carros.push("Volvo")
+console.log(`3. ${carros}`)
 
-let lista = ["adkjflaj", ["xx", "yy"]]
-console.log(lista[0][0])
-
-console.log(list[0])
-
-console.log(list[1],list[0])
-console.log(ages)
+console.log(`4. ${carros.length}`)
