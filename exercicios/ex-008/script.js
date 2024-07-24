@@ -1,13 +1,10 @@
-let cores = ["preto", "branco", "azul", "vermelho"]
-cores.push("verde")
-for(let n = 0; n < cores.length; n++) {
-    console.log(cores[n])
+let fruits = ["maçã", "banana", "laranja", "uva"] 
+for (let f of fruits) {
+    console.log(f)
 }
 
-for(let i in cores) {
-    console.log(cores[i])
-}
-
-for(let cor of cores) {
-    console.log(cor)
+let n = 1
+while (n <= 100) {
+    console.log(n)
+    n++
 }
