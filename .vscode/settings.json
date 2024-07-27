@@ -3,5 +3,9 @@
         "cars",
         "Fiat",
         "fruits"
-    ]
+    ],
+    "CodeGPT.Autocomplete.enabled": true,
+    "CodeGPT.apiKey": "CodeGPT Plus Beta",
+    "CodeGPT.Autocomplete.maxTokens": 136,
+    "CodeGPT.Autocomplete.provider": "CodeGPT Plus - Plus"
 }
