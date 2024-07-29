@@ -1,24 +1,12 @@
-let fruits = ["maçã", "banana", "uva", "laranja",]
-if(fruits.includes("uva")) {
-    console.log("A fruta uva está na lista.")
+let quantidadeDeClicks = 0
+function clicou() {
+    quantidadeDeClicks ++
+    if (quantidadeDeClicks <= 70) {
+        console.log(`Você clicou no botão ${quantidadeDeClicks} vezes`)
+    }
+    else {
+        console.log(`Você clicou no botão ${quantidadeDeClicks} vezes, tá na hora de parar já`)
+    }
 }
-else {
-    console.log("A fruta uva não está na lista.")
-}
 
-let fruitsM = fruits.map(function (fruit){
-    return fruit.toUpperCase()
-})
-console.log(fruitsM)
-
-let numbers = [1, 2, 3, 4, 5]
-let sumNumbers = numbers.reduce(function (valorAcumulado, valorAtual) {
-    return valorAcumulado + valorAtual
-} )
-console.log(sumNumbers)
-
-let numList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]   
-let firstNumberGreaterThanFive = numList.find(function (number) {
-    return number > 5
-})
-console.log(firstNumberGreaterThanFive)
+document.querySelector('#button').addEventListener('click', clicou)
