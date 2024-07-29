@@ -8,3 +8,6 @@ carros.push("Volvo")
 console.log(`3. ${carros}`)
 
 console.log(`4. ${carros.length}`)
+
+let marcas = ["Ford", "Chevrolet", "Fiat"]
+console.log(`5. ${marcas}`)
