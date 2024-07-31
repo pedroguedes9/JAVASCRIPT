@@ -1,12 +1,12 @@
 let quantidadeDeClicks = 0
 function clicou() {
-    quantidadeDeClicks ++
-    if (quantidadeDeClicks <= 70) {
-        console.log(`Você clicou no botão ${quantidadeDeClicks} vezes`)
-    }
-    else {
-        console.log(`Você clicou no botão ${quantidadeDeClicks} vezes, tá na hora de parar já`)
-    }
+    quantidadeDeClicks++
+    const quantidadeDeClicksDisplay = document.querySelector("#quantidadeDeClicks")
+    const ul = document.querySelector('ul')
+    quantidadeDeClicksDisplay.innerHTML = `Você clicou ${quantidadeDeClicks} vezes`
+    const newLi = document.createElement('li')
+    newLi.innerHTML = "item adicionado"
+    ul.appendChild(newLi)
 }
 
 document.querySelector('#button').addEventListener('click', clicou)
