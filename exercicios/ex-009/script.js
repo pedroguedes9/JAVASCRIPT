@@ -6,7 +6,8 @@ function clicou() {
     quantidadeDeClicksDisplay.innerHTML = `Você clicou ${quantidadeDeClicks} vezes`
     const newLi = document.createElement('li')
     newLi.innerHTML = "item adicionado"
-    ul.appendChild(newLi)
+    ul.prepend(newLi)
 }
 
 document.querySelector('#button').addEventListener('click', clicou)
+
