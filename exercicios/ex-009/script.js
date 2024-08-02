@@ -1,13 +1,13 @@
-let quantidadeDeClicks = 0
+const inputText = document.querySelector('#itexto')
 function clicou() {
-    quantidadeDeClicks++
-    const quantidadeDeClicksDisplay = document.querySelector("#quantidadeDeClicks")
-    const ul = document.querySelector('ul')
-    quantidadeDeClicksDisplay.innerHTML = `Você clicou ${quantidadeDeClicks} vezes`
-    const newLi = document.createElement('li')
-    newLi.innerHTML = "item adicionado"
-    ul.prepend(newLi)
+    console.log(inputText.getAttribute("placeholder"))
+    if(inputText.getAttribute("style") === "background-color: blue") {
+        inputText.setAttribute("style", "background-color: red")
+    }
+    else {
+        inputText.setAttribute("style", "background-color: blue")
+    }
 }
+document.querySelector("#button").addEventListener('click', clicou)
 
-document.querySelector('#button').addEventListener('click', clicou)
 
