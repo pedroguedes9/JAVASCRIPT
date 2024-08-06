@@ -1,13 +1,11 @@
-const inputText = document.querySelector('#itexto')
-function clicou() {
-    if(inputText.classList.contains("azul")) {
-        inputText.classList.replace("azul", "vermelho")
+const input = document.querySelector('input');
+const ul = document.querySelector('ul')
+function verificarSeTeclaEnter(event) {
+    if (event.key === "Enter"){
+        const newLi = document.createElement("li")
+        li.textContent = input.value
+        ul.appendChild(li)
+        input.value = ""
     }
-    else {
-        inputText.classList.replace("vermelho", "azul")
-    }
-    console.log(inputText.classList)
 }
-document.querySelector("#button").addEventListener('click', clicou)
-
-
+input.addEventListener('keyup', verificarSeTeclaEnter)
