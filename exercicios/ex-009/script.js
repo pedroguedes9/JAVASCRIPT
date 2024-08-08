@@ -3,8 +3,8 @@ const ul = document.querySelector('ul')
 function verificarSeTeclaEnter(event) {
     if (event.key === "Enter"){
         const newLi = document.createElement("li")
-        li.textContent = input.value
-        ul.appendChild(li)
+        newLi.textContent = input.value
+        ul.appendChild(newLi)
         input.value = ""
     }
 }
