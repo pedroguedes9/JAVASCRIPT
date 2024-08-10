@@ -48,7 +48,7 @@ class Sorcerer extends Character {
     constructor(name) {
         super(name) 
         this.life = 80
-        this.attack = 15
+        this.attack = 17
         this.defense = 4
         this.maxLife = this.life
     }
@@ -63,13 +63,32 @@ class Stage {
     }
     start() {
         this.update()
+        this.fighter1El.querySelector("#player-attack").addEventListener("click", () => this.doAttack(this.fighter1, this.fighter2) )
+        this.fighter2El.querySelector("#monster-attack").addEventListener("click", () => this.doAttack(this.fighter2, this.fighter1))
     }
     update() {
         // fighter 1
-        this.fighter1El.querySelector("#player-name").innerHTML = this.fighter1.name
+        this.fighter1El.querySelector("#player-name").innerHTML = `${this.fighter1.name} - ${this.fighter1.life} HP`
+        let f1Pct = (this.fighter1.life / this.fighter1.maxLife) * 100
+        this.fighter1El.querySelector("#player-life-bar").style.width = `${f1Pct}%`
     
         // fighter 2
-        this.fighter2El.querySelector("#monster-name").innerHTML = this.fighter2.name
+        this.fighter2El.querySelector("#monster-name").innerHTML = `${this.fighter2.name} - ${this.fighter2.life}`
+        let f2Pct = (this.fighter2.life / this.fighter2.maxLife) * 100
+        this.fighter2El.querySelector("#monster-life-bar").style.width = `${f2Pct}%`
     }
+
+    doAttack(attacking, attacked) {
+        if(attacking.life <= 0 || attacked.life <= 0) {
+            console.log("Já está morto")
+            return
+        }
+        
+        this.update()
+    }
+
 }
 
+function gerarNumeroAleatorio(min, max) {
+    Math.floor(math.random() * (max - min + 1) + min)
+}

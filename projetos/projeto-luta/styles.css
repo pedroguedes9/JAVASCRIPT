@@ -2,7 +2,7 @@
     padding: 0;
 }
 body, html {
-    height: 100%;
+    height: 99vh;
     font-family: 'Roboto', sans-serif;
 }
 header {
@@ -22,12 +22,14 @@ div#player-life-bar {
     border-radius: 50px;
     background-color: red;
     width: 10%;
+    transition: .5s;
 }
 div#monster-life-bar {
     height: 20px;
     border-radius: 50px;
     background-color: red;
     width: 10%;
+    transition: .5s;
 }
 button {
     font-size: 1.3em;
