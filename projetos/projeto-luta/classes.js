@@ -89,6 +89,6 @@ class Stage {
 
 }
 
-function gerarNumeroAleatorio(min, max) {
+function randomNumberGenerator(min, max) {
     Math.floor(math.random() * (max - min + 1) + min)
 }
