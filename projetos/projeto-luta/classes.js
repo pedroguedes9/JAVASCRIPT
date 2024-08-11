@@ -83,12 +83,24 @@ class Stage {
             console.log("Já está morto")
             return
         }
-        
+        let attackFactor = (Math.random() * 2).toFixed(1)
+        let defenseFactor = (Math.random() * 2).toFixed(1)
+        let actualAttack = attacking.attack * attackFactor
+        let actualDefense = attacked.defense * defenseFactor
+        if(actualAttack > actualDefense) {
+            attacked.life -= actualAttack
+            console.log(`${attacking.name} causou ${actualAttack} de dano em ${attacked.name}`)
+            
+        }
+        else {
+            console.log(`${attacked.name} conseguiu defender`)
+        }
+
         this.update()
     }
 
 }
 
 function randomNumberGenerator(min, max) {
-    Math.floor(math.random() * (max - min + 1) + min)
+    return Math.floor(math.random() * (max - min + 1) + min)
 }
