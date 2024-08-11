@@ -36,7 +36,7 @@ class BigMonster extends Character {
 
 class Knight extends Character {
     constructor(name) {
-        super(name)
+        super(`${name} (Knight)`)
         this.life = 100
         this.attack = 10
         this.defense = 8
@@ -46,7 +46,7 @@ class Knight extends Character {
 
 class Sorcerer extends Character {
     constructor(name) {
-        super(name) 
+        super(`${name} (Sorcerer)`) 
         this.life = 80
         this.attack = 17
         this.defense = 4
@@ -55,11 +55,12 @@ class Sorcerer extends Character {
 }
 
 class Stage {
-    constructor(fighter1, fighter2, fighter1El, fighter2El) {
+    constructor(fighter1, fighter2, fighter1El, fighter2El, logObject) {
         this.fighter1 = fighter1
         this.fighter2 = fighter2
         this.fighter1El = fighter1El
         this.fighter2El = fighter2El
+        this.logObject = logObject
     }
     start() {
         this.update()
@@ -68,19 +69,19 @@ class Stage {
     }
     update() {
         // fighter 1
-        this.fighter1El.querySelector("#player-name").innerHTML = `${this.fighter1.name} - ${this.fighter1.life} HP`
+        this.fighter1El.querySelector("#player-name").innerHTML = `${this.fighter1.name} - ${this.fighter1.life.toFixed(2)} HP`
         let f1Pct = (this.fighter1.life / this.fighter1.maxLife) * 100
         this.fighter1El.querySelector("#player-life-bar").style.width = `${f1Pct}%`
     
         // fighter 2
-        this.fighter2El.querySelector("#monster-name").innerHTML = `${this.fighter2.name} - ${this.fighter2.life}`
+        this.fighter2El.querySelector("#monster-name").innerHTML = `${this.fighter2.name} - ${this.fighter2.life.toFixed(2)}`
         let f2Pct = (this.fighter2.life / this.fighter2.maxLife) * 100
         this.fighter2El.querySelector("#monster-life-bar").style.width = `${f2Pct}%`
     }
 
     doAttack(attacking, attacked) {
         if(attacking.life <= 0 || attacked.life <= 0) {
-            console.log("Já está morto")
+            this.logObject.addMessage("Já está morto")
             return
         }
         let attackFactor = (Math.random() * 2).toFixed(1)
@@ -89,11 +90,11 @@ class Stage {
         let actualDefense = attacked.defense * defenseFactor
         if(actualAttack > actualDefense) {
             attacked.life -= actualAttack
-            console.log(`${attacking.name} causou ${actualAttack} de dano em ${attacked.name}`)
+            this.logObject.addMessage(`${attacking.name} causou ${actualAttack.toFixed(2)} de dano em ${attacked.name}`)
             
         }
         else {
-            console.log(`${attacked.name} conseguiu defender`)
+            this.logObject.addMessage(`${attacked.name} conseguiu defender`)
         }
 
         this.update()
@@ -101,6 +102,24 @@ class Stage {
 
 }
 
-function randomNumberGenerator(min, max) {
-    return Math.floor(math.random() * (max - min + 1) + min)
+class Log {
+    list = []
+
+    constructor(listEL) {
+        this.listEL = listEL
+    }
+
+    addMessage(msg) {
+        this.list.push(msg)
+        this.render()
+    }
+    render() {
+        this.listEL.innerHTML = ""
+
+        for(let i in this.list) {
+            this.listEL.innerHTML += `<li>${this.list[i]}</li>`
+        }
+    }
 }
+
+
