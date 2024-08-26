@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html {
+    height: 99vh;
+    font-family: 'Roboto', sans-serif;
+}
+header {
+    display: flex;
+    gap: 20px;
+}
+div#player, div#monster {
+    flex: 1;
+}
+div#player-bar, div#monster-bar {
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+div#player-life-bar {
+    height: 20px;
+    border-radius: 50px;
+    background-color: red;
+    width: 10%;
+    transition: .5s;
+}
+div#monster-life-bar {
+    height: 20px;
+    border-radius: 50px;
+    background-color: red;
+    width: 10%;
+    transition: .5s;
+}
+button {
+    font-size: 1.3em;
+    
+}
+button:hover {
+    cursor: pointer;
+    background-color: red;
+
+}
+main div ul {
+    border: 1px dotted black;
+    height: 200px;
+    overflow-y: scroll;
+    display: block;
+}
