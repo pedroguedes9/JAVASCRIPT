@@ -2,6 +2,9 @@ let title = ""
 function clicou() {
     fetch("https://jsonplaceholder.typicode.com/posts")
         .then((response) => {
+            if (response.status >= 400 & response.status < 500) {
+                console.log("erro no cliente")
+            }
             return response.json()
             
         })
