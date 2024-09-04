@@ -6,7 +6,6 @@ function clicou() {
                 console.log("erro no cliente")
             }
             return response.json()
-            
         })
         .then((data) => {
             title = data[0].title
