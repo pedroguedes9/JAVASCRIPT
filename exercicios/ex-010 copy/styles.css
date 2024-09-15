@@ -1,0 +1,76 @@
+body{
+    margin-left: 100px;
+    
+}
+
+h4{
+    font-family:  "PT Sans Narrow", sans-serif;
+    font-size: 130%;
+    font-weight: 200;
+    letter-spacing: 5px;
+    margin-top: 70px;
+}
+
+
+
+#circulo{
+    font-weight: 600;
+    background-color: #CCE8E5;
+    width: 50px;
+    height: 50px;
+    z-index: -1;
+    position: relative;
+    right: 10px;
+    top: 40px;
+    border-radius: 50%;
+}
+
+
+
+
+h1{
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 300%;
+    font-weight: 300;   
+}
+
+h1 span{
+    font-weight: 700;
+}
+
+p{
+    font-family: "PT Sans", sans-serif;
+    color: #516163;
+    line-height: 30px;
+    font-size: 13pt;
+}
+
+a{
+    text-decoration: underline;
+    text-decoration-color: #CCE8E5;
+    text-decoration-thickness:4px;
+    color:#323B3C ;
+    font-weight: 550;
+    font-style: italic;
+}
+
+.botao{
+    font-family: "PT Sans", sans-serif;
+    font-size: 9pt;
+    color: #323B3C;
+    margin-top: 30px;
+    border: none;
+    height: 55px;
+    width: 170px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+#b1{
+    background-color: #CCE8E5;
+}
+
+#b2{
+    margin-left: 20px;
+    width: 190px;
+}
