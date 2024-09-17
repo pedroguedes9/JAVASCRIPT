@@ -1,23 +1,8 @@
-let title = ""
-function clicou() {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-        .then((response) => {
-            if (response.status >= 400 & response.status < 500) {
-                console.log("erro no cliente")
-            }
-            return response.json()
-        })
-        .then((data) => {
-            title = data[0].title
-            document.querySelector("h1").innerText = title
-        })
-        .catch((error) => {
-            console.log("deu problema")
-            console.log(error)
-        })
-        .finally(() => {
-            alert("afdkfj")
-        })
+
+let clicou = async () => {
+    let req = await fetch("https://jsonplaceholder.typicode.com/posts")
+    let json = await req.json()
+    alert(`titulo do primeiro post: ${json[0].title}`)
 }
 function inserir() {
     fetch("https://jsonplaceholder.typicode.com/posts",
@@ -39,6 +24,7 @@ function inserir() {
     .then((json) => {
         console.log(json)
     })
+    
 }
 document.querySelector("#button").addEventListener("click", clicou)
 document.querySelector("#inserir").addEventListener("click", inserir)
