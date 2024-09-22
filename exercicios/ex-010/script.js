@@ -1,30 +1,16 @@
+let nome = "Pedro Chaves Guedes"
+console.log(nome.replace("Guedes", "Chaves"))
 
-let clicou = async () => {
-    let req = await fetch("https://jsonplaceholder.typicode.com/posts")
-    let json = await req.json()
-    alert(`titulo do primeiro post: ${json[0].title}`)
-}
-function inserir() {
-    fetch("https://jsonplaceholder.typicode.com/posts",
-        {
-            method: "post",
-            headers: {
-                "Content-Type" : "application/json"
-            },
-            body: JSON.stringify({
-                title: "titulo de teste",
-                body: "corpo de teste,",
-                userId: 2
-            })
-        }
-    )
-    .then((response) => {
-        return response.json()
-    })
-    .then((json) => {
-        console.log(json)
-    })
-    
-}
-document.querySelector("#button").addEventListener("click", clicou)
-document.querySelector("#inserir").addEventListener("click", inserir)
+let nome2 = "Pedro Chaves Guedes"
+console.log(nome2.toUpperCase())
+
+console.log(nome2.toLowerCase())
+
+let nome3 = "      Pedro     "
+console.log(nome3.trim())
+
+let nome4 = "Pedro Chaves Guedes"
+console.log(nome4.charAt(4))
+
+let nome5 = "Pedro Chaves Guedes"
+console.log(nome.split(" "))
