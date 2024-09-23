@@ -1,16 +1,3 @@
-let nome = "Pedro Chaves Guedes"
-console.log(nome.replace("Guedes", "Chaves"))
-
-let nome2 = "Pedro Chaves Guedes"
-console.log(nome2.toUpperCase())
-
-console.log(nome2.toLowerCase())
-
-let nome3 = "      Pedro     "
-console.log(nome3.trim())
-
-let nome4 = "Pedro Chaves Guedes"
-console.log(nome4.charAt(4))
-
-let nome5 = "Pedro Chaves Guedes"
-console.log(nome.split(" "))
+let n = "10.4"
+console.log(parseInt(n) + 5)
+console.log(parseFloat(n) + 5)
