@@ -1,2 +1,2 @@
-let d = new Date()
-console.log(d.getTime())
+let novoValor = Math.min()
+console.log(novoValor)
