@@ -1,5 +1,3 @@
-function criar() {
-    return [1, 2, 3]
-}
-let [a, b, c] = criar()
-console.log(a,b,c)
+let numeros = [1,2,3,4,5]
+let outros = [...numeros, 6,7,8,9,10]
+console.log(outros)
